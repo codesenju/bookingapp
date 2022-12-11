@@ -12,14 +12,14 @@ services:
       - "8080:5000"
   movie.internal-bookingapp.com:
     container_name: movie
-    image: 587878432697.dkr.ecr.us-east-1.amazonaws.com/bookingappp-movie:latest
+    image: bookingappp-movie:latest
     build:
       context: ./Bookingapp-movie
     ports:
       - "80:5000"
   moviev2.internal-bookingapp.com:
     container_name: moviev2
-    image: 587878432697.dkr.ecr.us-east-1.amazonaws.com/bookingappp-moviev2:latest
+    image: bookingappp-moviev2:latest
     build:
       context: ./Bookingapp-moviev2
     ports:
