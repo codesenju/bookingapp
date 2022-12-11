@@ -5,7 +5,7 @@ services:
     image: redis:alpine
   home.internal-booking.com:
     container_name: frontend
-    image: 587878432697.dkr.ecr.us-east-1.amazonaws.com/bookingappp-home
+    image: 587878432697.dkr.ecr.us-east-1.amazonaws.com/bookingappp-home:latest
     build:
       context: ./Bookingapp-home
     ports:
@@ -16,7 +16,7 @@ services:
     build:
       context: ./Bookingapp-movie
     ports:
-      - "80:500"
+      - "80:5000"
   moviev2.internal-bookingapp.com:
     container_name: moviev2
     image: 587878432697.dkr.ecr.us-east-1.amazonaws.com/bookingappp-moviev2:latest
@@ -24,3 +24,10 @@ services:
       context: ./Bookingapp-moviev2
     ports:
       - "81:5000"
+  movie-reserve.internal-bookingapp.com:
+    container_name: reserve
+    image: 587878432697.dkr.ecr.us-east-1.amazonaws.com/bookingappp-movie-reserve:latest
+    build:
+      context: ./Bookingapp-movie-reserve
+    ports:
+      - "82:5000"
